@@ -6,10 +6,8 @@ import (
 	"slices"
 )
 
-// Middleware defines a function type that takes an http.Handler and returns an http.Handler.
-// This allows for the creation of middleware functions that can wrap handlers to add functionality such as logging, authentication, etc.
-// The middleware can be applied to all routes in the router or to specific routes as needed.
-type Middleware func(handler http.Handler) http.Handler
+// Middleware is the type for HTTP middleware functions.
+type Middleware func(next http.Handler) http.Handler
 
 // Router is a simple HTTP router that supports middleware.
 type Router struct {
